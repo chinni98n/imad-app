@@ -6,23 +6,56 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleOne=
+var articles= {
 
-{
-    title: 'Article One | Haritha',
-    heading: 'Article One',
-    date: 'May 7, 2018',
-    content:
-                    `<p>
-                            This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                    </p>
-                    <p> 
-                            This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                    </p>
-                    <p>     This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                    </p>`
-    
+        'article-one': {
+            title: 'Article One | Haritha',
+            heading: 'Article One',
+            date: 'May 7, 2018',
+            content:
+                            `<p>
+                                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                            </p>
+                            <p> 
+                                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                            </p>
+                            <p>     This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                            </p>`
+            
+        },
+        'article-two': {
+            title: 'Article Two | Haritha',
+            heading: 'Article Two',
+            date: 'May 8, 2018',
+            content:
+                            `<p>
+                                    This is the second article.This is the second article.This is the second article.This is the second  This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article.
+                            </p>
+                            <p>
+                            This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article. 
+                            </p>
+                            <p>
+                             This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article. 
+                             </p>`
+        },
+        'article-three': {
+            title: 'Article Three | Haritha',
+            heading: 'Article Three',
+            date: 'May 9, 2018',
+            content:
+                            `<p>
+                                   This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.
+                            </p>
+                            <p>
+                                   This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.
+                            </p>
+                            <p>
+                                   This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.
+                            </p>`
+        }
 };
+        
+        
     function createtemplate(data){
         var title=data.title;
         var date=data.date;
@@ -62,14 +95,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne));
-});
-app.get('/article-two',function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three',function(req,res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName',function(req,res){
+    //articleName=articleOne;
+    //articles[articleName]== {}content object for articleOne
+    var articleName=req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
