@@ -13,18 +13,23 @@ var articleOne=
     heading: 'Article One',
     date: 'May 7, 2018',
     content:
+                    `<p>
+                            This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                    </p>
+                    <p> 
+                            This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                    </p>
+                    <p>     This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
+                    </p>`
     
 };
-
-function createTemplate(data){
+    function createtemplate(data){
+        var title=data.title;
+        var date=data.date;
+        var heading=data.heading;
+        var content=data.content;
     
-    var title=data.title;
-    var date=data.date;
-    var heading=data.heading;
-    var content=data.content;
-    
-    
-    var htmlTemplate= 
+    var htmlTemplate= `
         <html>
             <head>
                 <title>
@@ -50,10 +55,9 @@ function createTemplate(data){
                 </div>
         </div>
             </body>
-        </html>
+        </html> `;
         return htmlTemplate;
-
-}
+    }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
