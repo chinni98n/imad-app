@@ -12,7 +12,9 @@ button.onclick=function() {
         if(request.readyState===XMLHttpRequest.DONE){
             //Take some action
             if(request.status===200){
-                
+                var counter=request.responseText;
+                var span=document.getElementById('count');
+                span.innerHTML= counter.toString();
             }
         }
         //Not done yet
@@ -41,7 +43,7 @@ submit.onclick = function() {
                     names=JSON.parse(names);
                     var list='';
                     for (var i=0; i<names.length; i++) {
-                    list+= '<li>' + names[i] + '</li>';
+                    list += '<li>' + names[i] + '</li>';
                      }
   
                       var ul= document.getElementById('namelist');
@@ -54,7 +56,7 @@ submit.onclick = function() {
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
     //Make the request
-    request.open('GET','http://chinni98n.imad.hasura-app.io/submit-name?name='+name,true);
+    request.open('GET','http://chinni98n.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
    
 };
