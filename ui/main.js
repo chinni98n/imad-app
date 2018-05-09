@@ -56,7 +56,7 @@ submit.onclick = function() {
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
     //Make the request
-    request.open('GET','http://chinni98n.imad.hasura-app.io/submit-name?name=' + name,true);
-    request.send(null);
+    requeste.open('GET','http://chinni98n.imad.hasura-app.io/submit-name?name=' + name,true);
+    requeste.send(null);
    
 };
