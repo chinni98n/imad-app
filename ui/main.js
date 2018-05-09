@@ -13,14 +13,14 @@ button.onclick=function() {
             //Take some action
             if(request.status===200){
                var counter=request.responseText;
-            var span=document.getElementById('count');
+               var span=document.getElementById('count');
                 span.innerHTML= counter.toString();
             }
         }
         //Not done yet
     };
     //Make the request
-    request.open('GET','http://chinni98n.imad.hasura-app.io/submit-name?name='+name,true);
+    request.open('GET','http://chinni98n.imad.hasura-app.io/counter',true);
     request.send(null);
 };
 
