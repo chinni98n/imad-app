@@ -152,7 +152,7 @@ app.get('/articles/:articleName',function(req,res){
            res.status(500).send(err.toString());
        } 
        else {
-           if(res.rows.length===0) {
+           if(result.rows.length===0) {
                res.Status(404).send('Article not found');
            }
            else{
