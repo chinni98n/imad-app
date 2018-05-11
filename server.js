@@ -12,56 +12,6 @@ var config = {
 };
 var app = express();
 app.use(morgan('combined'));
-
-
-var articles= {
-
-        'article-one': {
-            title: 'Article One | Haritha',
-            heading: 'Article One',
-            date: 'May 7, 2018',
-            content:
-                            `<p>
-                                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                            </p>
-                            <p> 
-                                    This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                            </p>
-                            <p>     This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.This is the first article.
-                            </p>`
-            
-        },
-        'article-two': {
-            title: 'Article Two | Haritha',
-            heading: 'Article Two',
-            date: 'May 8, 2018',
-            content:
-                            `<p>
-                                    This is the second article.This is the second article.This is the second article.This is the second  This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article.
-                            </p>
-                            <p>
-                            This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article. 
-                            </p>
-                            <p>
-                             This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article.  This is the second article.This is the second article.This is the second article.This is the second article. 
-                             </p>`
-        },
-        'article-three': {
-            title: 'Article Three | Haritha',
-            heading: 'Article Three',
-            date: 'May 9, 2018',
-            content:
-                            `<p>
-                                   This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.
-                            </p>
-                            <p>
-                                   This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.
-                            </p>
-                            <p>
-                                   This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.This is the third article.
-                            </p>`
-        }
-};
         
         
     function createTemplate(data){
