@@ -89,7 +89,7 @@ var articles= {
                     ${heading}
                 </h3>
                 <div>
-                    ${date}
+                    ${date.todateString()}
                 </div>
                 <div>
                     ${content}
